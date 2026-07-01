@@ -16,7 +16,9 @@ while True:
     print("1. Agregar producto")
     print("2. Mostrar inventario")
     print("3. Eliminar Producto")
-    print("4. Salir")
+    print("4. Buscar Producto")
+    print("5. Productos con bajo stock")
+    print("6. Salir")
 
     opcion = input("Selecciona una opción: ")
 
@@ -36,7 +38,15 @@ while True:
         inventario.eliminar_producto(nombre)
         #print("3. Eliminar producto")
 
+#Para buscar el nombre del producto, se necesita poner el nombre completo sino es dificil que lo encuentre
     elif opcion == "4":
+        nombre = input("Nombre del producto a buscar: ")
+        inventario.buscar_producto(nombre)
+
+    elif opcion == "5":
+        inventario.productos_bajo_stock()
+
+    elif opcion == "6":
         print("Saliendo del sistema...")
         break
 

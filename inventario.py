@@ -37,3 +37,26 @@ class Inventario:
             return
 
         print("Producto no encontrado.")
+
+    def buscar_producto(self, nombre):
+        for producto in self.productos:
+         if producto.nombre.lower() == nombre.lower():
+            print("\nProducto encontrado:\n")
+            producto.mostrar_producto()
+            return
+
+        print("Producto no encontrado.")
+
+    def productos_bajo_stock(self, limite=5):
+        encontrados = False
+
+        print(f"\nProductos con stock menor o igual a {limite}:\n")
+
+        for producto in self.productos:
+         if producto.stock <= limite:
+            producto.mostrar_producto()
+            print("--------------------")
+            encontrados = True
+
+        if not encontrados:
+            print("No hay productos con bajo stock.")
