@@ -27,3 +27,13 @@ class Inventario:
         for producto in self.productos:
             producto.mostrar_producto()
             print("--------------------")
+
+    def eliminar_producto(self, nombre):
+        for producto in self.productos:
+          if producto.nombre.lower() == nombre.lower():
+            self.productos.remove(producto)
+            guardar_datos(self.productos)
+            print("Producto eliminado correctamente.")
+            return
+
+        print("Producto no encontrado.")

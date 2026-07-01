@@ -15,7 +15,8 @@ while True:
     print("\n===== SISTEMA DE INVENTARIO =====")
     print("1. Agregar producto")
     print("2. Mostrar inventario")
-    print("3. Salir")
+    print("3. Eliminar Producto")
+    print("4. Salir")
 
     opcion = input("Selecciona una opción: ")
 
@@ -31,6 +32,11 @@ while True:
         inventario.mostrar_inventario()
 
     elif opcion == "3":
+        nombre = input("Nombre del producto a eliminar: ")
+        inventario.eliminar_producto(nombre)
+        #print("3. Eliminar producto")
+
+    elif opcion == "4":
         print("Saliendo del sistema...")
         break
 
