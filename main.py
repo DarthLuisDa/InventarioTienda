@@ -18,7 +18,8 @@ while True:
     print("3. Eliminar Producto")
     print("4. Buscar Producto")
     print("5. Productos con bajo stock")
-    print("6. Salir")
+    print("6. Editar Producto")
+    print("7. Salir")
 
     opcion = input("Selecciona una opción: ")
 
@@ -47,6 +48,10 @@ while True:
         inventario.productos_bajo_stock()
 
     elif opcion == "6":
+        nombre = input("Nombre del producto a editar: ")
+        inventario.editar_producto(nombre)
+
+    elif opcion == "7":
         print("Saliendo del sistema...")
         break
 

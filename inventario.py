@@ -60,3 +60,28 @@ class Inventario:
 
         if not encontrados:
             print("No hay productos con bajo stock.")
+
+    def editar_producto(self, nombre):
+        for producto in self.productos:
+          if producto.nombre.lower() == nombre.lower():
+
+            print("\nProducto encontrado. Deja vacío si no quieres cambiar algo.\n")
+
+            nuevo_nombre = input(f"Nuevo nombre ({producto.nombre}): ")
+            nuevo_precio = input(f"Nuevo precio ({producto.precio}): ")
+            nuevo_stock = input(f"Nuevo stock ({producto.stock}): ")
+
+            if nuevo_nombre:
+                producto.nombre = nuevo_nombre
+
+            if nuevo_precio:
+                producto.precio = float(nuevo_precio)
+
+            if nuevo_stock:
+                producto.stock = int(nuevo_stock)
+            
+            guardar_datos(self.productos)
+            print("Producto actualizado correctamente.")
+            return
+
+        print("Producto no encontrado.")
