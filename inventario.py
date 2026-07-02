@@ -7,11 +7,30 @@ class Inventario:
         self.productos = []
 
     def agregar_producto(self, nombre, precio, stock):
+    # Verificar si el producto ya existe
+     for producto in self.productos:
+        if producto.nombre.lower() == nombre.lower():
+            print("Error: El producto ya existe en el inventario.")
+            return
+
+    # Crear el nuevo producto
+     nuevo_producto = Producto(nombre, precio, stock)
+
+    # Agregarlo a la lista
+     self.productos.append(nuevo_producto)
+
+    # Guardar cambios
+     guardar_datos(self.productos)
+
+     print("Producto agregado correctamente.")
+    #Esto se modifica
+    """
+    def agregar_producto(self, nombre, precio, stock):
         nuevo_producto = Producto(nombre, precio, stock)
         self.productos.append(nuevo_producto)
         guardar_datos(self.productos)
         print("Producto agregado correctamente.")
-
+    """
     #Esto se modifica
     """
     def agregar_producto(self, nombre, precio, stock):

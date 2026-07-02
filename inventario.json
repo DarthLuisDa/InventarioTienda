@@ -11,7 +11,12 @@
     },
     {
         "nombre": "Colecci\u00f3n Camioncitos Bimbo 2026 6 pzs",
-        "precio": 599.0,
-        "stock": 4
+        "precio": 649.0,
+        "stock": 3
+    },
+    {
+        "nombre": "Colecci\u00f3n Completa Cartoon Network Little Bites Bimbo 25 Piezas",
+        "precio": 1100.0,
+        "stock": 11
     }
 ]
