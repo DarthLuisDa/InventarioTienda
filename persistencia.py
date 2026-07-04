@@ -2,7 +2,12 @@ import json
 
 def guardar_datos(productos):
     with open("inventario.json", "w", encoding="utf-8") as file:
-        json.dump([p.__dict__ for p in productos], file, indent=4)
+        json.dump(
+    [p.__dict__ for p in productos],
+    file,
+    indent=4,
+    ensure_ascii=False
+)
 
 #Nota: jason.dump guarda la lista en el archivo json
       #p.__dict__ convierte cada objeto producto en un json con tres atributos/propiedades
